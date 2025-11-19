@@ -17,7 +17,7 @@ Compare model performance using accuracy & AUC
 Generate a final submission file for Kaggle
 
 # Project Workflow
-## 1. Data Overview
+### 1. Data Overview
 
 We start by inspecting dataset structure and missing values:
 
@@ -29,7 +29,7 @@ Check missing value percentages
 
 Visualize missing pattern with heatmaps
 
-## 2. Exploratory Data Analysis (EDA)
+### 2. Exploratory Data Analysis (EDA)
 
 Key visualizations include:
 
@@ -45,7 +45,7 @@ KDE plot of Age vs Survival
 
 Correlation heatmap
 
-# Key findings:
+### Key findings:
 
 Females have a much higher survival rate
 
@@ -57,21 +57,21 @@ Younger children had higher survival probabilities
 
 To improve model performance, several additional features were created.
 
-## Sex Encoding
+### Sex Encoding
 male → 0, female → 1
-## Embarked Encoding
+### Embarked Encoding
 S → 0, C → 1, Q → 2
-## Title Extraction
+### Title Extraction
 Extracted from passenger names:
 Mr, Mrs, Miss, Master, Other
-## Family Features
+### Family Features
 FamilySize = SibSp + Parch + 1
 IsAlone = 1 if FamilySize == 1 else 0
-## Ticket Group Size
+### Ticket Group Size
 Number of passengers sharing the same ticket.
-## Cabin Letter Extraction
+### Cabin Letter Extraction
 Cabin block A–G encoded as integers.
-## Missing Value Handling
+### Missing Value Handling
 Age → median
 Fare → median
 Embarked → mode
@@ -80,14 +80,14 @@ Final feature list included 12 engineered variables.
 
 # 4.Model Training & Validation
 
-## Split:
+### Split:
 Train: 80%
 Validation: 20% (stratified by Survived)
-## Models compared:
+### Models compared:
 Logistic Regression
 Random Forest
 XGBoost
-## Evaluation metrics:
+### Evaluation metrics:
 Accuracy
 ROC–AUC
 
@@ -95,9 +95,9 @@ ROC–AUC
 
 The full training set was used to fit the final Logistic Regression model.
 Predictions on test.csv were saved as:
-‘’‘bash
+```
 submission.csv
-‘’‘
+```
 # Kaggle Score
 Public Score: 0.77511
 
